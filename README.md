@@ -62,7 +62,7 @@ If you want to modify any ACPI file make sure you are using the latest MaciASL. 
 
 ## Installation
 
-1) **Create the efi partition on a separate drive than Windows.**
+**1) Create the efi partition on a separate drive than Windows.**
 
 **This should only be done by those who want macOS on a separate drive than Windows**
 
@@ -76,7 +76,7 @@ We need to first create the efi partition on the drive macOS will be installed f
 
 Now on Windows go to Create and Format Hard Drive Partitions and create a partition with NTFS format with the desired space for macOS.
 
-2) **Create a bootable USB**
+**2) Create a bootable USB**
 I use vanilla macOS and creating the USB is another story I won't cover, a great guide for this can be found [here](https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/).
 When installing Clover make sure to pick your USB, only check "Install Clover for UEFI booting only", "Install Clover in the ESP" will be checked and in the UEFI Drivers section check only FSInject, ApfsDriverLoader and AptioMemoryFix or OsxAptioFixDrv3 in case AptioMemoryFix is not available on newer Clover versions.
 Carefully follow the guide and navigate to the downloaded USB Files folder, replace/copy the following files from the clover install folder on your USB:
@@ -86,7 +86,7 @@ Carefully follow the guide and navigate to the downloaded USB Files folder, repl
 * All the kexts found on kexts/Other to the same folder on the USB
 * And finally the tonymacx86 clover theme, why this one? Well it is the one used in the config.plist as it is my preffered one.
 
-3) **BIOS**
+**3) BIOS**
 
 Enter the BIOS and change the following settings from their default values:
 
@@ -117,16 +117,18 @@ BIOSConnect -> Disabled
 
 If you have windows currently installed you may need to recreate the pin for logging with it after this changes.
 
-4) **Booting the installer**
+**4) Booting the installer**
+
 Use the default UEFI USB boot entry or create your own and make it to be the main one. Restart and select Install macOS from the Clover screen and wait for the installer to load. (May even take more than 10m depending on the USB speed, be patient)
 
-5) **macOS Installer**
+**5) macOS Installer**
 
 **If you have ethernet connected it will ask to Set up your Apple ID, click on set up later. If not plugged just click on My Mac does not connect to the internet**
 Go to disk utility and go to erase to format the created NTFS partition of the desired size for macOS with APFS named Macintosh HD (diskutil may exit), reopen and wait for it to finish erasing and creating the partition.
 Now complete the installation process with the desired language and stuff it wil take some time and restart a couple times do NOT touch anything nor shutdown the computer so make sure it is plugged in. After the system has been installed launch macOS from the USB with the Clover bootloader, then proceed to the final step of installing the correct drivers, clover bootloader to a drive so the USB is not needed to boot and setting the proper configurations to get the system running at best, because most things won't work right now, only the essentials to boot.
 
-6) **Post Installation**
+**6) Post Installation**
+
 Login and set up your user.
 **You can plug the ethernet but only login to you Apple ID after step 7**
 We first need to install Clover to the Macintosh HD drive, launch the clover install package and make sure you click on Change "Install Location" and set it for the internal drive, check same things as when creating the USB but also check "Install RC Scripts on Target Volume". Navigate to the POST INSTALL/Clover folder,copy/replace the config.plist, the SSDT-G7.aml from ACPI/Patched the kexts from the Other folder and finally the tonymacx86 theme.
@@ -135,11 +137,15 @@ In the POST INSTALL folder there will be a another one named Kexts to /L/E/ whic
 Set up the ComboJack fix from the [ComboJack](https://github.com/Andrw0830/ComboJack) repo or there will be a static noise with/without headphones plugged and will lead to high CPU frequency all time. The VerbStub.kext is already in the POST INSTALL/Clover/Others folder, just copy all kexts to the Other folder as stated in step **6**.
 Reboot after installing it.
 
-7) **iMessage and FaceTime**
+**7) iMessage and FaceTime**
+
 To get both working we need to fake the Serial Number, Board Nuber, BIOS Version... for that follow this easy [guide](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/).
 Try using Clover Configurator which will generate some serials and stuff to simplify things. Choose MacBookPro15,2 on the mac list for energy purposes.
 
-8) Sleepimage is saved by default to RAM and disk, the system will first sleep and later hibernate (hibernatemode 3). To avoid hibernation and improve sleep by saving sleepimage only to RAM enter the following command in terminal:
+**8) Sleep**
+
+Sleepimage is saved by default to RAM and disk, the system will first sleep and later hibernate (hibernatemode 3). 
+To avoid hibernation and improve sleep by saving sleepimage only to RAM enter the following command in terminal:
 
 	sudo pmset -a hibernatemode 0
 
