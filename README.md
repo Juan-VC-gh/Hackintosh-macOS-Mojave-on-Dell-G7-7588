@@ -118,7 +118,7 @@ BIOSConnect -> Disabled
 If you have windows currently installed you may need to recreate the pin for logging with it after this changes.
 
 4) **Booting the installer**
-This laptop doesn't scan for bootable drives automatically so you have to plug the USB and manually create an EFI boot entry, when done restart and launch the Clover bootloader and select Install macOS from the screen and wait for the installer to load. (May even take more than 10m depending on the USB speed, be patient)
+Use the default UEFI USB boot entry or create your own and make it to be the main one. Restart and select Install macOS from the Clover screen and wait for the installer to load. (May even take more than 10m depending on the USB speed, be patient)
 
 5) **macOS Installer**
 
@@ -139,7 +139,16 @@ Reboot after installing it.
 To get both working we need to fake the Serial Number, Board Nuber, BIOS Version... for that follow this easy [guide](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/).
 Try using Clover Configurator which will generate some serials and stuff to simplify things. Choose MacBookPro15,2 on the mac list for energy purposes.
 
-Lastly check everything works, use Intel Power Gadget to check for CPU power management, set clover to be the main boot entry and enjoy you new ~~Mac~~ Hackintosh!
+8) Sleepimage is saved by default to RAM and disk, the system will first sleep and later hibernate (hibernatemode 3). To avoid hibernation and improve sleep by saving sleepimage only to RAM enter the following command in terminal:
+
+	sudo pmset -a hibernatemode 0
+
+If it is not sleeping disconnect the AC adapter from the laptop and verify hibernatemode is set to 0 and no apps are mentioned to be preventing sleep by entering into terminal:
+
+	sudo pmset -g
+
+Lastly use Intel Power Gadget to check for CPU power management, set Clover to be the main boot entry and enjoy you new ~~Mac~~ Hackintosh!
+
 I have created a configuration file for the new and promising OpenCore bootloader. It is a new bootloader with a few to no guides and a little more complicated so I have not attached any files for it but if you wanna try it let me know and I will link you the files. Grab the latest OpenCore bootloader version from the Insanelymac discord as the repo is slowly updated.
 
 ## Credits

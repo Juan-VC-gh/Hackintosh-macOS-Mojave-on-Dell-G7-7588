@@ -61,27 +61,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename method _WAK to ZWAK and use with SSDT-PTSWAK.aml (to fix dGPU power sapping)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>FDlfV0FLAQ==</data>
-					<key>Replace</key>
-					<data>FDlaV0FLAQ==</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename method _PTS to ZPTS and use with SSDT-PTSWAK.aml (to fix dGPU power sapping)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>FEkEX1BUUwE=</data>
-					<key>Replace</key>
-					<data>FEkEWlBUUwE=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>change _STA to XSTA in Device GPI0 (for the interrupt state)</string>
+					<string>change _STA to XSTA in Device GPI0 (to inject _STA from SSDT and ensure the interrupt state)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -105,7 +85,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename BRT6 to BRTX, use with SSDT-BRT6.aml, SSDT-PNLF.aml, WhateverGreen.kext, and VoodooPS2KeyboardController.kext to fix brightness keys</string>
+					<string>Rename BRT6 to BRTX, Use with WhateverGreen.kext, and VoodooPS2KeyboardController.kext to fix brightness keys</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -125,7 +105,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>change HDAS to HDEF (audio)</string>
+					<string>change HDAS to HDEF (Audio)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -155,7 +135,7 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Change _OSI to XOSI (to fake windows)</string>
+					<string>Change _OSI to XOSI (Override for host defined _OSI to handle &quot;Darwin&quot;)</string>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
@@ -187,7 +167,7 @@
 				<key>PStates</key>
 				<false/>
 				<key>PluginType</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>NoDynamicExtract</key>
 			<false/>
@@ -235,8 +215,6 @@
 				<data>mz4AAA==</data>
 				<key>device_type</key>
 				<string>VGA compatible controller</string>
-				<key>disable-external-gpu</key>
-				<data>AQAAAA==</data>
 				<key>model</key>
 				<string>Intel UHD Graphics 630</string>
 			</dict>
@@ -246,7 +224,7 @@
 			<key>AddClockID</key>
 			<true/>
 			<key>FixOwnership</key>
-			<false/>
+			<true/>
 			<key>HighCurrent</key>
 			<false/>
 		</dict>
@@ -442,10 +420,52 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
+		<key>BiosReleaseDate</key>
+		<string>06/26/2018</string>
+		<key>BiosVendor</key>
+		<string>Apple Inc.</string>
+		<key>BiosVersion</key>
+		<string>MBP152.88Z.0178.B00.1806260902</string>
+		<key>Board-ID</key>
+		<string>Mac-827FB448E656EC26</string>
+		<key>BoardManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>BoardSerialNumber</key>
+		<string>C028522704NJH4R1M</string>
+		<key>BoardType</key>
+		<integer>10</integer>
+		<key>BoardVersion</key>
+		<string>1.0</string>
+		<key>ChassisAssetTag</key>
+		<string>MacBook-Aluminum</string>
+		<key>ChassisManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>ChassisType</key>
+		<string>0x09</string>
+		<key>Family</key>
+		<string>MacBook Pro</string>
+		<key>FirmwareFeatures</key>
+		<string>0xFC0FE137</string>
+		<key>FirmwareFeaturesMask</key>
+		<string>0xFF1FFF3F</string>
+		<key>LocationInChassis</key>
+		<string>Part Component</string>
+		<key>Manufacturer</key>
+		<string>Apple Inc.</string>
+		<key>Mobile</key>
+		<true/>
+		<key>PlatformFeature</key>
+		<string>0x1A</string>
 		<key>ProductName</key>
 		<string>MacBookPro15,2</string>
+		<key>SerialNumber</key>
+		<string>C02XWWZNJHCD</string>
+		<key>SmUUID</key>
+		<string>CDD4EFAB-47F0-49F0-90E0-00F98E723A8E</string>
 		<key>Trust</key>
 		<true/>
+		<key>Version</key>
+		<string>1.0</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
