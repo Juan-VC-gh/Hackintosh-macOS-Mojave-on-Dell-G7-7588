@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Comment</key>
+	<string>This config.plist is intended to be used with hotpatches (SSDTs) on Dell G7 7588 and macOS Mojave</string>
 	<key>ACPI</key>
 	<dict>
 		<key>AutoMerge</key>
@@ -178,7 +180,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 nv_disable=1 -igfxnohdmi</string>
+		<string>-igfxnohdmi</string>
 		<key>DefaultVolume</key>
 		<string>LastBootedVolume</string>
 		<key>NeverHibernate</key>
@@ -186,8 +188,6 @@
 		<key>Timeout</key>
 		<integer>5</integer>
 	</dict>
-	<key>Comment</key>
-	<string>This config.plist is intended to be used with hotpatches (SSDTs) on Dell G7 7588 and macOS Mojave</string>
 	<key>Devices</key>
 	<dict>
 		<key>Properties</key>
