@@ -1,5 +1,7 @@
 # macOS Mojave on Dell G7 7588
 
+## Edit: There is a Catalina repo already, all the files in it can be used with Mojave. I have not had anny time to explain things as on this README but drivers and configuration files are updated, better use the ones in the Catalina repo.
+
 As always, first things first, I will start mentioning that Nvidia cards drivers were dropped since macOS High Sierra, which means that If you want them working you will have to go back, however; Coffe Lake graphics are natively supported since macOS Mojave, that's good news so no need for much workaround with it. I have seen people on youtube as on forums claming to have macOS on the Dell G7 and they actually do but here's a thing, I checked their files, a couple videos and I can say those are probably not the best installations. No native macOS trackpad gestures, high CPU use all the time, no USB ports mapped, VoodooHDA leading to crappy sound and horrible input. Some people show their Geekbench 4 score and... well not too much to say it isn't either the best one. Hackintosh may not be that hard but you may need to read a lot to understand quite a few things and even come up with some solutions yourself for a perfectly working machine, lucky you, I have already done all that so follow the guide carefully and you will be able to experience the smoothness of macOS on this laptop.
 
 ## What you need:
