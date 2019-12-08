@@ -100,8 +100,7 @@ Make sure Enable USB Boot Support and Enable External
 
 USB Ports are checked
 
-No security for the TB3 devices or they won't probably 
-work on macOS.
+No security for the TB3 devices or they won't probably work on macOS.
 
 PTT Security -> Disabled
 
@@ -157,7 +156,7 @@ If it is not sleeping disconnect the AC adapter from the laptop and verify hiber
 
 Lastly use Intel Power Gadget to check for CPU power management, set Clover to be the main boot entry and enjoy you new ~~Mac~~ Hackintosh!
 
-I have created a configuration file for the new and promising OpenCore bootloader. It is a new bootloader with a few to no guides and a little more complicated so I have not attached any files for it but if you wanna try it let me know and I will link you the files. Grab the latest OpenCore bootloader version from the Insanelymac discord as the repo is slowly updated.
+**Appreciate the work and want to donate?** [PayPal](<https://www.paypal.me/juanvasquezcastro>)
 
 ## Credits
 
